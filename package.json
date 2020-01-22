@@ -1,0 +1,33 @@
+{
+  "name": "frontend-project-lvl1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "set NODE_ENV=production && babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tek-gal/frontend-project-lvl1.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tek-gal/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/tek-gal/frontend-project-lvl1#readme",
+  "devDependencies": {
+    "@babel/core": "*",
+    "@babel/cli": "*",
+    "@babel/node": "*",
+    "@babel/preset-env": "*",
+    "cross-env": "*"
+  },
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  }
+}
