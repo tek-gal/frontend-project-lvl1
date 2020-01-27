@@ -10,3 +10,4 @@
 <a>
   <img src="https://travis-ci.com/tek-gal/frontend-project-lvl1.svg?branch=master" />
 </a>
+<a href="https://asciinema.org/a/CcQjmfJJCE8OS9eukAHhXc8UQ"><img src="https://asciinema.org/a/CcQjmfJJCE8OS9eukAHhXc8UQ.png" width="836"/></a>
