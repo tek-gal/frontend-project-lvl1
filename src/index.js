@@ -1,47 +1,67 @@
 import readlineSync from 'readline-sync';
 
+
+export const welcome = () => {
+  console.log('Welcome to the Brain Games!');
+};
+
 export const hello = () => {
   const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!\n`);
+  console.log(`Hello, ${name}!`);
   return name;
 };
 
-const askQuestion = () => {
-  const num = Math.ceil(Math.random() * 100);
-  const even = num % 2 === 0;
-  const question = `Question: ${num}`;
+const askQuestion = (quest) => {
+  const question = `Question: ${quest}`;
   console.log(question);
-  return even;
 };
 
-const parseAnswer = (even) => {
-  const answer = readlineSync.question('Your answer: ');
-  const correctAnswer = even ? 'yes' : 'no';
-  const isCorrect = answer === correctAnswer;
+export const generateNum = (max = undefined) => {
+  if (max === undefined) return Math.ceil(Math.random() * 100);
+  return Math.floor(Math.random() * max);
+};
 
-  if (isCorrect) {
-    console.log('Correct!');
-  } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-  }
+const getAnswer = () => readlineSync.question('Your answer: ');
+
+const parseAnswer = (answer, correctAnswer) => {
+  const isCorrect = answer === correctAnswer;
+  const response = isCorrect ? 'Correct!'
+    : `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`;
+
+  console.log(response);
 
   return isCorrect;
 };
 
-export default () => {
-  console.log('Welcome to the Brain Games!\n');
+const alertMistake = (name) => {
+  console.log(`Let's try again, ${name}`);
+};
 
+const congratulate = (name) => {
+  console.log(`Congratulations, ${name}!`);
+};
+
+const throwDescription = (description) => console.log(description);
+
+export default (questionGenerator, answerChecker, description) => {
+  welcome();
   const name = hello();
 
+  if (description) throwDescription(description);
+
   for (let i = 1; i <= 3; i += 1) {
-    const correctAnswer = askQuestion();
-    const isCorrect = parseAnswer(correctAnswer);
+    const question = questionGenerator();
+    askQuestion(question);
+
+    const answer = getAnswer();
+    const correctAnswer = answerChecker(question).toString();
+    const isCorrect = parseAnswer(answer, correctAnswer);
 
     if (!isCorrect) {
-      console.log(`Let's try again, ${name}`);
+      alertMistake(name);
       return;
     }
   }
 
-  console.log(`Congratulations, ${name}!`);
+  congratulate(name);
 };
