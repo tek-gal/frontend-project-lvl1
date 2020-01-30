@@ -7,7 +7,7 @@
 <a href="https://codeclimate.com/github/tek-gal/frontend-project-lvl1/test_coverage">
   <img src="https://api.codeclimate.com/v1/badges/f6a0553eccf9656461c8/test_coverage" />
 </a>
-<a>
+<a href="https://travis-ci.org/tek-gal/frontend-project-lvl1.svg?branch=master">
   <img src="https://travis-ci.com/tek-gal/frontend-project-lvl1.svg?branch=master" />
 </a>
 <a href="https://asciinema.org/a/WecJOcxdA7QmaKMnuNQWJdvzo"><img src="https://asciinema.org/a/WecJOcxdA7QmaKMnuNQWJdvzo.png" width="836"/></a>
