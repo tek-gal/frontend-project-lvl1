@@ -2,9 +2,6 @@
 
 import game, { generateNum } from '..';
 
-
-
-
 const questionGenerator = () => generateNum();
 
 const answerChecker = (num) => {
