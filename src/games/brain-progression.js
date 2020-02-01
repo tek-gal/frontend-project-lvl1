@@ -27,18 +27,17 @@ const questionGenerator = () => makeProgression(10);
 
 const answerChecker = (question) => {
   const arr = question.split(' ');
-  const step = arr
-    .filter((num) => num !== '..')
-    .reduce((acc, num, i, arr1) => {
-      if (i === 0) return acc;
-      return Math.min(acc, +num - (+arr1[i - 1] || 0));
-    }, Infinity);
-  const value = arr.reduce((acc, num, i, arr1) => {
-    if (num !== '..') return acc;
+  const emptyIdx = arr.indexOf('..');
+  const len = arr.length;
 
-    if (i === 0) return +arr1[1] - step;
-    return +arr[i - 1] + step;
-  }, 0);
+  const step = emptyIdx > 1
+    ? +arr[1] - +arr[0]
+    : +arr[len - 1] - +arr[len - 2];
+
+  const value = emptyIdx > 0
+    ? +arr[emptyIdx - 1] + step
+    : +arr[emptyIdx + 1] - step;
+
   return value;
 };
 
