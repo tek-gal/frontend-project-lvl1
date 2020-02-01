@@ -15,14 +15,16 @@ export const askQuestion = (quest) => {
   console.log(question);
 };
 
-export const generateNum = (max = undefined) => {
-  if (max === undefined) return Math.ceil(Math.random() * 100);
-  return Math.floor(Math.random() * max);
+export const generateNum = (maxValue = undefined) => {
+  const decimals = 100;
+  return maxValue === undefined
+    ? Math.ceil(Math.random() * maxValue)
+    : Math.floor(Math.random() * decimals);
 };
 
 export const getAnswer = () => readlineSync.question('Your answer: ');
 
-export const parseAnswer = (answer, correctAnswer) => {
+export const getCorrectness = (answer, correctAnswer) => {
   const isCorrect = answer === correctAnswer;
   const response = isCorrect ? 'Correct!'
     : `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`;

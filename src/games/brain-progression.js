@@ -23,16 +23,16 @@ const makeProgression = (len) => {
   return progression.join(' ');
 };
 
-const questionGenerator = () => makeProgression(10);
+const generateQuestion = () => makeProgression(10);
 
-const answerChecker = (question) => {
+const getCorrectAnswer = (question) => {
   const progression = question.split(' ');
   const emptyIdx = progression.indexOf('..');
-  const len = progression.length;
+  const lastIdx = progression.length - 1;
 
   const step = emptyIdx > 1
     ? +progression[1] - +progression[0]
-    : +progression[len - 1] - +progression[len - 2];
+    : +progression[lastIdx] - +progression[lastIdx - 1];
 
   const emptyValue = emptyIdx > 0
     ? +progression[emptyIdx - 1] + step
@@ -43,4 +43,4 @@ const answerChecker = (question) => {
 
 const description = 'What number is missing in the progression?';
 
-export default () => game(questionGenerator, answerChecker, description);
+export default () => game(generateQuestion, getCorrectAnswer, description);

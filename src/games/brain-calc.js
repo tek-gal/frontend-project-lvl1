@@ -9,15 +9,15 @@ const mapper = {
   '/': (num1, num2) => +num1 / +num2,
 };
 
-const questionGenerator = () => {
+const generateQuestion = () => {
   const operator = operators[generateNum(4)];
   return `${generateNum()} ${operator} ${generateNum()}`;
 };
 
-const answerChecker = (question) => {
+const getCorrectAnswer = (question) => {
   const [num1, operator, num2] = question.split(' ');
   const correctAnswer = mapper[operator](num1, num2);
   return correctAnswer;
 };
 
-export default () => game(questionGenerator, answerChecker);
+export default () => game(generateQuestion, getCorrectAnswer);
