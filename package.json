@@ -2,6 +2,10 @@
   "name": "frontend-project-lvl1",
   "version": "1.0.0",
   "description": "Wow! My package!",
+  "keywords": [
+    "brain-games",
+    "wonderful"
+  ],
   "main": "dist/index.js",
   "scripts": {
     "build": "set NODE_ENV=production && babel src --out-dir dist --source-maps inline",

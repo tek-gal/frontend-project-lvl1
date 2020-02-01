@@ -1,8 +1,9 @@
-
-import game, { generateNum } from '..';
+import game from '..';
+import { generateNum } from '../functions';
 
 const getStep = () => {
-  const step = generateNum(20);
+  const maxNum = 20;
+  const step = generateNum(maxNum);
   return step === 0 ? getStep() : step;
 };
 
@@ -10,7 +11,8 @@ const makeProgression = (len) => {
   let num = generateNum();
   const step = getStep();
   const arr = [num];
-  const toThrow = generateNum(10);
+  const maxNum = 10;
+  const toThrow = generateNum(maxNum);
 
   while (arr.length < len) {
     num += step;
@@ -26,13 +28,13 @@ const questionGenerator = () => makeProgression(10);
 const answerChecker = (question) => {
   const arr = question.split(' ');
   const step = arr
-    .filter((n) => n !== '..')
-    .reduce((acc, n, i, arr1) => {
+    .filter((num) => num !== '..')
+    .reduce((acc, num, i, arr1) => {
       if (i === 0) return acc;
-      return Math.min(acc, +n - (+arr1[i - 1] || 0));
+      return Math.min(acc, +num - (+arr1[i - 1] || 0));
     }, Infinity);
-  const value = arr.reduce((acc, n, i, arr1) => {
-    if (n !== '..') return acc;
+  const value = arr.reduce((acc, num, i, arr1) => {
+    if (num !== '..') return acc;
 
     if (i === 0) return +arr1[1] - step;
     return +arr[i - 1] + step;

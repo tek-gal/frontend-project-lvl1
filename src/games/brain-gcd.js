@@ -1,4 +1,5 @@
-import game, { generateNum } from '..';
+import game from '..';
+import { generateNum } from '../functions';
 
 const questionGenerator = () => {
   const num1 = generateNum();
