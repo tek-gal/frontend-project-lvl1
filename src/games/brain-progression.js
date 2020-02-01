@@ -10,35 +10,35 @@ const getStep = () => {
 const makeProgression = (len) => {
   let num = generateNum();
   const step = getStep();
-  const arr = [num];
+  const progression = [num];
   const maxNum = 10;
-  const toThrow = generateNum(maxNum);
+  const numIdxToThrow = generateNum(maxNum);
 
-  while (arr.length < len) {
+  while (progression.length < len) {
     num += step;
-    arr.push(num);
+    progression.push(num);
   }
 
-  arr[toThrow] = '..';
-  return arr.join(' ');
+  progression[numIdxToThrow] = '..';
+  return progression.join(' ');
 };
 
 const questionGenerator = () => makeProgression(10);
 
 const answerChecker = (question) => {
-  const arr = question.split(' ');
-  const emptyIdx = arr.indexOf('..');
-  const len = arr.length;
+  const progression = question.split(' ');
+  const emptyIdx = progression.indexOf('..');
+  const len = progression.length;
 
   const step = emptyIdx > 1
-    ? +arr[1] - +arr[0]
-    : +arr[len - 1] - +arr[len - 2];
+    ? +progression[1] - +progression[0]
+    : +progression[len - 1] - +progression[len - 2];
 
-  const value = emptyIdx > 0
-    ? +arr[emptyIdx - 1] + step
-    : +arr[emptyIdx + 1] - step;
+  const emptyValue = emptyIdx > 0
+    ? +progression[emptyIdx - 1] + step
+    : +progression[emptyIdx + 1] - step;
 
-  return value;
+  return emptyValue;
 };
 
 const description = 'What number is missing in the progression?';
