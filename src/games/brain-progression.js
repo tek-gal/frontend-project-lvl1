@@ -1,5 +1,5 @@
 import game from '..';
-import { generateNum } from '../functions';
+import generateNum from '../functions';
 
 const getStep = () => {
   const maxNum = 20;
@@ -8,39 +8,32 @@ const getStep = () => {
 };
 
 const makeProgression = (len) => {
-  let num = generateNum();
+  const startNum = generateNum();
   const step = getStep();
-  const progression = [num];
-  const maxNum = 10;
-  const numIdxToThrow = generateNum(maxNum);
+  const progression = [];
 
-  while (progression.length < len) {
-    num += step;
-    progression.push(num);
+  for (let i = 0; i < len; i += 1) {
+    const currentNum = startNum + step * i;
+    progression.push(currentNum);
   }
 
-  progression[numIdxToThrow] = '..';
-  return progression.join(' ');
+  return progression;
 };
 
-const generateQuestion = () => makeProgression(10);
+const generateQuestion = () => {
+  const progressionLength = 10;
+  const progression = makeProgression(progressionLength);
+  const numIdxToThrow = generateNum(progressionLength);
 
-const getCorrectAnswer = (question) => {
-  const progression = question.split(' ');
-  const emptyIdx = progression.indexOf('..');
-  const lastIdx = progression.length - 1;
+  const numToThrow = progression[numIdxToThrow];
+  progression[numIdxToThrow] = '..';
 
-  const step = emptyIdx > 1
-    ? +progression[1] - +progression[0]
-    : +progression[lastIdx] - +progression[lastIdx - 1];
+  const question = progression.join(' ');
+  const answer = numToThrow;
 
-  const emptyValue = emptyIdx > 0
-    ? +progression[emptyIdx - 1] + step
-    : +progression[emptyIdx + 1] - step;
-
-  return emptyValue;
+  return [question, answer];
 };
 
 const description = 'What number is missing in the progression?';
 
-export default () => game(generateQuestion, getCorrectAnswer, description);
+export default () => game(generateQuestion, description);

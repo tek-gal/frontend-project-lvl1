@@ -1,7 +1,12 @@
 import game from '..';
-import { generateNum } from '../functions';
+import generateNum from '../functions';
 
-const generateQuestion = () => generateNum();
-const getCorrectAnswer = (question) => (question % 2 === 0 ? 'yes' : 'no');
+const generateQuestion = () => {
+  const question = generateNum();
+  const answer = question % 2 === 0 ? 'yes' : 'no';
+  return [question, answer];
+};
 
-export default () => game(generateQuestion, getCorrectAnswer);
+const description = "Answer 'yes' if number is ever. Otherwise answer 'no'.";
+
+export default () => game(generateQuestion, description);

@@ -1,33 +1,31 @@
-import {
-  welcome,
-  hello,
-  throwDescription,
-  askQuestion,
-  getAnswer,
-  getCorrectness,
-  alertMistake,
-  congratulate,
-} from './functions';
+import readlineSync from 'readline-sync';
 
-export default (generateQuestion, getCorrectAnswer, description) => {
-  welcome();
-  const name = hello();
+export default (generateQuestion, description) => {
+  console.log('Welcome to the Brain Games!');
 
-  if (description) throwDescription(description);
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+
+  if (description) console.log(description);
 
   for (let i = 1; i <= 3; i += 1) {
-    const question = generateQuestion();
-    askQuestion(question);
+    let [question, correctAnswer] = generateQuestion();
+    question = question.toString();
+    correctAnswer = correctAnswer.toString();
 
-    const answer = getAnswer();
-    const correctAnswer = getCorrectAnswer(question).toString();
-    const isCorrect = getCorrectness(answer, correctAnswer);
+    console.log(`Question: ${question}`);
+
+    const answer = readlineSync.question('Your answer: ');
+    const isCorrect = answer === correctAnswer;
 
     if (!isCorrect) {
-      alertMistake(name);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+      console.log(`Let's try again, ${name}`);
       return;
     }
+
+    console.log('Correct!');
   }
 
-  congratulate(name);
+  console.log(`Congratulations, ${name}!`);
 };
