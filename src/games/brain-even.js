@@ -5,7 +5,7 @@ const isEven = (num) => num % 2 === 0;
 
 const generateQuestion = () => {
   const question = generateNum();
-  const answer = isEven(num) ? 'yes' : 'no';
+  const answer = isEven(question) ? 'yes' : 'no';
   return [question, answer];
 };
 
