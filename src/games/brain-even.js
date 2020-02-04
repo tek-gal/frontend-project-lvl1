@@ -1,9 +1,11 @@
 import game from '..';
 import generateNum from '../functions';
 
+const isEven = (num) => num % 2 === 0;
+
 const generateQuestion = () => {
   const question = generateNum();
-  const answer = question % 2 === 0 ? 'yes' : 'no';
+  const answer = isEven(num) ? 'yes' : 'no';
   return [question, answer];
 };
 
