@@ -9,7 +9,7 @@ export default (generateQuestion, description) => {
   if (description) console.log(description);
 
   for (let i = 1; i <= 3; i += 1) {
-    let [question, correctAnswer] = generateQuestion();
+    let { question, correctAnswer } = generateQuestion();
     question = question.toString();
     correctAnswer = correctAnswer.toString();
 

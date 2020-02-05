@@ -25,13 +25,12 @@ const generateQuestion = () => {
   const progression = makeProgression(progressionLength);
   const numIdxToThrow = generateNum(progressionLength);
 
-  const numToThrow = progression[numIdxToThrow];
+  const correctAnswer = progression[numIdxToThrow];
+
   progression[numIdxToThrow] = '..';
-
   const question = progression.join(' ');
-  const answer = numToThrow;
 
-  return [question, answer];
+  return { question, correctAnswer };
 };
 
 const description = 'What number is missing in the progression?';

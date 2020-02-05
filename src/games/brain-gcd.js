@@ -22,8 +22,8 @@ const generateQuestion = () => {
   }
 
   const question = `${num1} ${num2}`;
-  const answer = findGCD(num1, num2);
-  return [question, answer];
+  const correctAnswer = findGCD(num1, num2);
+  return { question, correctAnswer };
 };
 
 const description = 'Find the greatest common divisor of given numbers.';

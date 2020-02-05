@@ -13,8 +13,8 @@ const isPrime = (num) => {
 
 const generateQuestion = () => {
   const num = generateNum();
-  const answer = isPrime(num) ? 'yes' : 'no';
-  return [num, answer];
+  const correctAnswer = isPrime(num) ? 'yes' : 'no';
+  return { question: num, correctAnswer };
 };
 
 

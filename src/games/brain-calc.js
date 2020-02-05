@@ -15,8 +15,8 @@ const generateQuestion = () => {
   const num2 = generateNum();
 
   const question = `${num1} ${operator} ${num2}`;
-  const answer = mapper[operator](num1, num2);
-  return [question, answer];
+  const correctAnswer = mapper[operator](num1, num2);
+  return { question, correctAnswer };
 };
 
 const description = 'Calculate the expression.';
