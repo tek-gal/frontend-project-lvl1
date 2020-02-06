@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export default (generateQuestion, description) => {
+export default (getQuestionAndCorrectAnswer, description) => {
   console.log('Welcome to the Brain Games!');
 
   const name = readlineSync.question('May I have your name? ');
@@ -8,8 +8,9 @@ export default (generateQuestion, description) => {
 
   if (description) console.log(description);
 
-  for (let i = 1; i <= 3; i += 1) {
-    let { question, correctAnswer } = generateQuestion();
+  const maxRounds = 3;
+  for (let i = 1; i <= maxRounds; i += 1) {
+    let { question, correctAnswer } = getQuestionAndCorrectAnswer();
     question = question.toString();
     correctAnswer = correctAnswer.toString();
 

@@ -1,5 +1,5 @@
-import game from '..';
-import generateNum from '../functions';
+import createGame from '..';
+import generateInt from '../functions';
 
 const findGCD = (num1, num2) => {
   let num = Math.max(num1, num2);
@@ -13,12 +13,12 @@ const findGCD = (num1, num2) => {
   return num + delimiter;
 };
 
-const generateQuestion = () => {
-  const num1 = generateNum();
-  let num2 = generateNum();
+const getQuestionAndCorrectAnswer = () => {
+  const num1 = generateInt();
+  let num2 = generateInt();
 
   while (num2 === num1) {
-    num2 = generateNum();
+    num2 = generateInt();
   }
 
   const question = `${num1} ${num2}`;
@@ -28,4 +28,4 @@ const generateQuestion = () => {
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-export default () => game(generateQuestion, description);
+export default () => createGame(getQuestionAndCorrectAnswer, description);

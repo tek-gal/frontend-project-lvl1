@@ -1,18 +1,12 @@
-import game from '..';
-import generateNum from '../functions';
+import createGame from '..';
+import generateInt from '../functions';
 
-const getStep = () => {
-  const maxNum = 20;
-  const step = generateNum(maxNum);
-  return step === 0 ? getStep() : step;
-};
+const progressionLength = 10;
 
-const makeProgression = (len) => {
-  const startNum = generateNum();
-  const step = getStep();
+const makeProgression = (startNum, step) => {
   const progression = [];
 
-  for (let i = 0; i < len; i += 1) {
+  for (let i = 0; i < progressionLength; i += 1) {
     const currentNum = startNum + step * i;
     progression.push(currentNum);
   }
@@ -20,10 +14,12 @@ const makeProgression = (len) => {
   return progression;
 };
 
-const generateQuestion = () => {
-  const progressionLength = 10;
-  const progression = makeProgression(progressionLength);
-  const numIdxToThrow = generateNum(progressionLength);
+const getQuestionAndCorrectAnswer = () => {
+  const startNum = generateInt();
+  const step = generateInt(1);
+
+  const progression = makeProgression(startNum, step);
+  const numIdxToThrow = generateInt(0, progressionLength);
 
   const correctAnswer = progression[numIdxToThrow];
 
@@ -35,4 +31,4 @@ const generateQuestion = () => {
 
 const description = 'What number is missing in the progression?';
 
-export default () => game(generateQuestion, description);
+export default () => createGame(getQuestionAndCorrectAnswer, description);
