@@ -39,8 +39,8 @@ but I did my best.
 
 Судорожно перебирай простые числа:
 <pre>$ brain-prime</pre>
-<a href="https://asciinema.org/a/c14o1dxhElY5xfgObd0jrBg1A"><img src="https://asciinema.org/a/c14o1dxhElY5xfgObd0jrBg1A.png" width="500"/></a>
+<a href="https://asciinema.org/a/QxGcvq8i7Kz8VwIiKZY6iLFsN"><img src="https://asciinema.org/a/QxGcvq8i7Kz8VwIiKZY6iLFsN.png" width="500"/></a>
 
 9 чисел и 2 точки:
 <pre>$ brain-progression</pre>
-<a href="https://asciinema.org/a/QxGcvq8i7Kz8VwIiKZY6iLFsN"><img src="https://asciinema.org/a/QxGcvq8i7Kz8VwIiKZY6iLFsN.png" width="500"/></a>
+<a href="https://asciinema.org/a/c14o1dxhElY5xfgObd0jrBg1A"><img src="https://asciinema.org/a/c14o1dxhElY5xfgObd0jrBg1A.png" width="500"/></a>
