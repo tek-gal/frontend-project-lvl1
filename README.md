@@ -19,6 +19,8 @@ but I did my best.
 <br>
 
 # install
+Скачайте репозиторий в папку, откройте папку в терминале и выполните:
+<pre>make install</pre>
 
 # games
 
