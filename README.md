@@ -1,3 +1,5 @@
+# brain-games
+
 Welcome to my repository for the first Hexlet project.
 <br>Here you can get 5 games and even more - a game engine to create your own games!
 <br>It would be dishonest to say that the default games are extremely intricate
@@ -20,25 +22,25 @@ but I did my best.
 
 # install
 Скачайте репозиторий в папку, откройте папку в терминале и выполните:
-<pre>make install</pre>
+<pre>$ make install</pre>
 
 # games
 Побудь примитивным калькулятором:
-<pre>brain-calc</pre>
+<pre>$ brain-calc</pre>
 <a href="https://asciinema.org/a/bXPiCjjCFJxsyB2MO14BDyT2q"><img src="https://asciinema.org/a/bXPiCjjCFJxsyB2MO14BDyT2q.png" width="500"/></a>
 
 Научись делить на 2:
-<pre>brain-even</pre>
+<pre>$ brain-even</pre>
 <a href="https://asciinema.org/a/kR94SiWodXGXvFmrlCfCh6Afa"><img src="https://asciinema.org/a/kR94SiWodXGXvFmrlCfCh6Afa.png" width="500"/></a>
 
 Вспомни аббревиатуру НОД:
-<pre>brain-gcd</pre>
+<pre>$ brain-gcd</pre>
 <a href="https://asciinema.org/a/fxZqVsvea9Xd83EJr7jLgWmhS"><img src="https://asciinema.org/a/fxZqVsvea9Xd83EJr7jLgWmhS.png" width="500"/></a>
 
 Судорожно перебирай простые числа:
-<pre>brain-prime</pre>
+<pre>$ brain-prime</pre>
 <a href="https://asciinema.org/a/c14o1dxhElY5xfgObd0jrBg1A"><img src="https://asciinema.org/a/c14o1dxhElY5xfgObd0jrBg1A.png" width="500"/></a>
 
 9 чисел и 2 точки:
-<pre>brain-progression</pre>
+<pre>$ brain-progression</pre>
 <a href="https://asciinema.org/a/QxGcvq8i7Kz8VwIiKZY6iLFsN"><img src="https://asciinema.org/a/QxGcvq8i7Kz8VwIiKZY6iLFsN.png" width="500"/></a>
