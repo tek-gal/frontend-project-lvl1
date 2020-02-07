@@ -29,7 +29,7 @@
 
 Найди НОД - деление посложнее:
 <pre>$ brain-gcd</pre>
-<a href="https://asciinema.org/a/ZMcu3IY6Mzf98ZEQULRvnEUo3"><img src="https://asciinema.org/a/ZMcu3IY6Mzf98ZEQULRvnEUo3" width="500"/></a>
+<a href="https://asciinema.org/a/ZMcu3IY6Mzf98ZEQULRvnEUo3"><img src="https://asciinema.org/a/ZMcu3IY6Mzf98ZEQULRvnEUo3.png" width="500"/></a>
 
 Простое ли число - опять деление:
 <pre>$ brain-prime</pre>
