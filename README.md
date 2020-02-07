@@ -21,7 +21,7 @@
 # games
 Примитивный калькулятор - сложение, вычитание, умножение:
 <pre>$ brain-calc</pre>
-<a href="https://asciinema.org/a/Di5YvIwn7KBqsMMCYNQas9hjj" data-autoplay="1"><img src="https://asciinema.org/a/Di5YvIwn7KBqsMMCYNQas9hjj.png" width="500"/></a>
+<a href="https://asciinema.org/a/Di5YvIwn7KBqsMMCYNQas9hjj?autoplay=1"><img src="https://asciinema.org/a/Di5YvIwn7KBqsMMCYNQas9hjj.png" width="500"/></a>
 
 Четное / нечетное число - а вот и деление:
 <pre>$ brain-even</pre>
