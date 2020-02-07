@@ -3,10 +3,10 @@ import generateInt from '../functions';
 
 const progressionLength = 10;
 
-const makeProgression = (startNum, step) => {
+const makeProgression = (startNum, step, length) => {
   const progression = [];
 
-  for (let i = 0; i < progressionLength; i += 1) {
+  for (let i = 0; i < length; i += 1) {
     const currentNum = startNum + step * i;
     progression.push(currentNum);
   }
@@ -18,9 +18,8 @@ const getQuestionAndCorrectAnswer = () => {
   const startNum = generateInt();
   const step = generateInt(1);
 
-  const progression = makeProgression(startNum, step);
+  const progression = makeProgression(startNum, step, progressionLength);
   const numIdxToThrow = generateInt(0, progressionLength);
-
   const correctAnswer = progression[numIdxToThrow];
 
   progression[numIdxToThrow] = '..';

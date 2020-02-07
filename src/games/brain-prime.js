@@ -4,7 +4,7 @@ import generateInt from '../functions';
 const isPrime = (num) => {
   if (num < 2) return false;
 
-  for (let i = 2; i < Math.ceil(num); i += 1) {
+  for (let i = 2; i < Math.floor(num); i += 1) {
     if (num % i === 0) return false;
   }
 

@@ -9,6 +9,6 @@ const getQuestionAndCorrectAnswer = () => {
   return { question, correctAnswer };
 };
 
-const description = "Answer 'yes' if number is ever. Otherwise answer 'no'.";
+const description = "Answer 'yes' if number is even. Otherwise answer 'no'.";
 
 export default () => createGame(getQuestionAndCorrectAnswer, description);
