@@ -17,6 +17,8 @@
 # install
 Скачайте репозиторий в папку, откройте папку в терминале и выполните:
 <pre>$ make install</pre>
+<a href="https://asciinema.org/a/nWVJ2AI7ud7BYkPqejMYGpsyN"><img src="https://asciinema.org/a/nWVJ2AI7ud7BYkPqejMYGpsyN.png" width="500"/></a>
+Запуск игр осуществляется из терминала.
 
 # games
 Примитивный калькулятор - сложение, вычитание, умножение:
