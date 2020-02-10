@@ -22,7 +22,7 @@ const getQuestionAndCorrectAnswer = () => {
   }
 
   const question = `${num1} ${num2}`;
-  const correctAnswer = findGCD(num1, num2);
+  const correctAnswer = findGCD(num1, num2).toString();
   return { question, correctAnswer };
 };
 

@@ -16,13 +16,13 @@ const makeProgression = (startNum, step, length) => {
 
 const getQuestionAndCorrectAnswer = () => {
   const startNum = generateInt();
-  const step = generateInt(1);
+  const step = generateInt(1, 20);
 
   const progression = makeProgression(startNum, step, progressionLength);
-  const numIdxToThrow = generateInt(0, progressionLength);
-  const correctAnswer = progression[numIdxToThrow];
+  const idToReplace = generateInt(0, progressionLength - 1);
+  const correctAnswer = progression[idToReplace].toString();
 
-  progression[numIdxToThrow] = '..';
+  progression[idToReplace] = '..';
   const question = progression.join(' ');
 
   return { question, correctAnswer };

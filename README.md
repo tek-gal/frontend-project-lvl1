@@ -12,6 +12,7 @@
 <a href="https://travis-ci.org/tek-gal/frontend-project-lvl1">
   <img src="https://travis-ci.com/tek-gal/frontend-project-lvl1.svg?branch=master" />
 </a>
+https://github.com/<OWNER>/<REPOSITORY>/workflows/<WORKFLOW_NAME>/badge.svg
 <br>
 
 # install
