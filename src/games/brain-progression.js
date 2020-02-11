@@ -1,5 +1,5 @@
 import createGame from '..';
-import generateInt from '../functions';
+import generateInt from '../generateInt';
 
 const progressionLength = 10;
 
@@ -19,10 +19,10 @@ const getQuestionAndCorrectAnswer = () => {
   const step = generateInt(1, 20);
 
   const progression = makeProgression(startNum, step, progressionLength);
-  const idToReplace = generateInt(0, progressionLength - 1);
-  const correctAnswer = progression[idToReplace].toString();
+  const missingElementIndex = generateInt(0, progressionLength - 1);
+  const correctAnswer = progression[missingElementIndex].toString();
 
-  progression[idToReplace] = '..';
+  progression[missingElementIndex] = '..';
   const question = progression.join(' ');
 
   return { question, correctAnswer };

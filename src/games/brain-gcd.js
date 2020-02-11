@@ -1,5 +1,5 @@
 import createGame from '..';
-import generateInt from '../functions';
+import generateInt from '../generateInt';
 
 const findGCD = (num1, num2) => {
   let num = Math.max(num1, num2);

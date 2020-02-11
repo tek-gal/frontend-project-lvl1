@@ -1,5 +1,5 @@
 import createGame from '..';
-import generateInt from '../functions';
+import generateInt from '../generateInt';
 
 const mapper = {
   '+': (num1, num2) => num1 + num2,

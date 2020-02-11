@@ -1,5 +1,5 @@
 import createGame from '..';
-import generateInt from '../functions';
+import generateInt from '../generateInt';
 
 const isPrime = (num) => {
   if (num < 2) return false;
